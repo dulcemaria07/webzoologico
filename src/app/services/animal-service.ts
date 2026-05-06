@@ -1,6 +1,7 @@
 import { HttpClient , HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { take } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
@@ -19,12 +20,8 @@ newAnimal(data: any): Observable<any> {
     data,
     {headers: this.httpOptions});
  }
- newMessage(messageText: string) {
-  this.toastr.success('Clic aquí para actualizar la lista', messageText)
-   .onTap
-   .pipe(take(1))
-   .subscribe(() => window.location.reload());
- } 
+
+ 
 
 
 }
